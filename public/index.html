@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usatenko.com</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="login-container">
+      <h1>Вход в чат</h1>
+      <input type="text" id="username" placeholder="Ваш ник" />
+      <button id="login-btn">Войти</button>
+    </div>
+
+    <div id="rooms-container" style="display: none">
+      <h1>Выберите комнату</h1>
+      <button id="create-room-btn">Создать комнату</button>
+      <div id="create-room-form" style="display: none">
+        <h2>Создать новую комнату</h2>
+        <input
+          type="text"
+          id="room-name"
+          placeholder="Название комнаты"
+          required />
+        <input
+          type="text"
+          id="room-desc"
+          placeholder="Описание (необязательно)" />
+        <input
+          type="password"
+          id="room-password"
+          placeholder="Пароль (необязательно)" />
+        <button id="submit-room-btn">Создать</button>
+      </div>
+      <div id="rooms-list"></div>
+    </div>
+
+    <div id="room-password-form" style="display: none">
+      <h2>Введите пароль для комнаты</h2>
+      <input
+        type="password"
+        id="room-password-check"
+        placeholder="Пароль"
+        required />
+      <button id="submit-password-btn">Войти</button>
+    </div>
+
+    <div id="chat-container" style="display: none">
+      <div class="chat-header">
+        <button id="back-to-rooms">← Назад к комнатам</button>
+        <h2 id="current-room-title">Название комнаты</h2>
+        <button id="delete-room-btn" style="display: none">
+          Удалить комнату
+        </button>
+      </div>
+      <div id="messages"></div>
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Ваше сообщение" />
+        <button id="send-btn">Отправить</button>
+      </div>
+    </div>
+
+    <div id="delete-room-form" style="display: none">
+      <h2>Удаление комнаты</h2>
+      <p>
+        Вы уверены, что хотите удалить комнату "${currentRoomName}"? Это
+        действие нельзя отменить.
+      </p>
+      <input
+        type="password"
+        id="delete-room-password"
+        placeholder="Пароль комнаты"
+        required />
+      <div class="form-buttons">
+        <button id="confirm-delete-room-btn">Удалить</button>
+        <button id="cancel-delete-room-btn">Отмена</button>
+      </div>
+    </div>
+
+    <script src="client.js"></script>
+  </body>
+</html>
