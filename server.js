@@ -43,16 +43,16 @@ db.serialize(() => {
 
 // Настройка загрузки файлов
 const upload = multer({
-  dest: "public/uploads/",
+  dest: "uploads/",
   limits: { fileSize: 10 * 1024 * 1024 }, // 10MB
 });
 
-if (!fs.existsSync("public/uploads")) {
+if (!fs.existsSync("uploads")) {
   fs.mkdirSync("public/uploads", { recursive: true });
 }
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(""));
 
 // API для получения списка комнат
 app.get("/api/rooms", (req, res) => {
@@ -357,7 +357,7 @@ wss.on("connection", (ws) => {
 });
 
 function pingSelf() {
-    const url = 'https://ваш-сайт.onrender.com'; // ваш URL
+    const url = 'https://usatenko.onrender.com'; // ваш URL
     axios.get(url)
         .then(() => console.log('Пинг успешен!'))
         .catch(err => console.error('Ошибка пинга:', err));
