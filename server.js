@@ -48,7 +48,7 @@ const upload = multer({
 });
 
 if (!fs.existsSync("uploads")) {
-  fs.mkdirSync("public/uploads", { recursive: true });
+  fs.mkdirSync("uploads", { recursive: true });
 }
 
 app.use(express.json());
