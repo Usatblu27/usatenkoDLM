@@ -356,6 +356,16 @@ wss.on("connection", (ws) => {
   });
 });
 
+function pingSelf() {
+    const url = 'https://ваш-сайт.onrender.com'; // ваш URL
+    axios.get(url)
+        .then(() => console.log('Пинг успешен!'))
+        .catch(err => console.error('Ошибка пинга:', err));
+}
+
+// Пинг каждые 5 минут (300000 мс)
+setInterval(pingSelf, 5 * 60 * 1000);
+
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`Сервер запущен на http://localhost:${PORT}`);
