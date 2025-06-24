@@ -1,7 +1,7 @@
 {
   "name": "usatenko",
   "short_name": "usatenko",
-  "start_url": "/usatenkoDLM/public/",
+  "start_url": "/usatenkoDLM/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
