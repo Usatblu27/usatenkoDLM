@@ -2,9 +2,9 @@
 const CACHE_NAME = 'v1';
 const urlsToCache = [
   '/',
-  '/public/index.html',
-  '/public/styles/main.css',
-  '/public/scripts/main.js',
+  '/index.html',
+  '/styles/main.css',
+  '/scripts/main.js',
   '/icon-512x512.png'
 ];
 
