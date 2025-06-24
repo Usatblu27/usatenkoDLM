@@ -52,7 +52,7 @@ if (!fs.existsSync("uploads")) {
 }
 
 app.use(express.json());
-app.use(express.static(""));
+app.use(express.static(__dirname));
 
 // API для получения списка комнат
 app.get("/api/rooms", (req, res) => {
